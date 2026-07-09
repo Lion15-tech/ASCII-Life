@@ -1,3 +1,5 @@
+import os
+
 #Definimos el mapa como una lista de listas 
 mapa = [
     ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"],
@@ -10,6 +12,12 @@ mapa = [
 #Coordenadas del jugador
 jugador_x = 4  
 jugador_y = 2
+
+def limpiar_pantalla():                                
+    if os.name == 'nt': 
+        os.system('cls') 
+    else:
+        os.system('clear')
 
 def dibujar_mapa(mapa, jugador_x, jugador_y): 
     #                                                 así tenemos "y"    
@@ -27,8 +35,6 @@ def dibujar_mapa(mapa, jugador_x, jugador_y):
 
         print()
 
-dibujar_mapa(mapa, jugador_x, jugador_y)
-
 def puede_mover(mapa, nueva_x, nueva_y):
     casilla = mapa[nueva_y][nueva_x]
 
@@ -36,3 +42,25 @@ def puede_mover(mapa, nueva_x, nueva_y):
         return True
 
     return False
+
+while True:
+    limpiar_pantalla()
+    dibujar_mapa(mapa, jugador_x, jugador_y)
+
+    nueva_x = jugador_x
+    nueva_y = jugador_y
+
+    tecla_presionada = input("WASD: ").lower()
+
+    if tecla_presionada == "a":
+        nueva_x = jugador_x - 1
+    elif tecla_presionada == "s":
+        nueva_y = jugador_y + 1
+    elif tecla_presionada == "d":
+        nueva_x = jugador_x + 1
+    elif tecla_presionada == "w":
+        nueva_y = jugador_y - 1
+    
+    if puede_mover(mapa, nueva_x, nueva_y):
+        jugador_x = nueva_x
+        jugador_y = nueva_y
