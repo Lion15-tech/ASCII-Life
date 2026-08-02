@@ -75,18 +75,3 @@ while True:
 
     nueva_x = jugador_x
     nueva_y = jugador_y
-
-    tecla_presionada = input("WASD: ").lower()
-
-    if tecla_presionada == "a":
-        nueva_x = jugador_x - 1
-    elif tecla_presionada == "s":
-        nueva_y = jugador_y + 1
-    elif tecla_presionada == "d":
-        nueva_x = jugador_x + 1
-    elif tecla_presionada == "w":
-        nueva_y = jugador_y - 1
-    
-    if puede_mover(mapa, nueva_x, nueva_y):
-        jugador_x = nueva_x
-        jugador_y = nueva_y
