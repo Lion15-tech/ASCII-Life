@@ -20,4 +20,12 @@
 - Se implementó la detección de la casilla frente al jugador.
 - Se agregó interacción con objetos mediante la tecla E.
 - Los árboles y cofres tienen interacciones diferentes.
-- Se añadieron mensajes de interacción.
+- Se añadieron mensajes de interacción. 
+
+## v0.0.5
+- Se implementó curses para controlar la terminal.
+- Se eliminó la necesidad de presionar Enter para cada movimiento.
+- Se agregó movimiento mediante WASD y flechas.
+- Se implementó la dirección del jugador.
+- Se añadió interacción con objetos mediante la tecla E.
+- Se añadió la tecla Q para salir del juego.
