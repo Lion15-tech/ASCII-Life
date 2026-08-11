@@ -20,11 +20,6 @@ inventario = {
 
 #Main para iniciar el juego con curses
 def main(stdscr):
-    global jugador_x
-    global jugador_y
-    global direccion
-
-
     while True:
         interfaz.dibujar_interfaz(stdscr)
         interfaz.dibujar_inventario(stdscr, inventario)
@@ -41,16 +36,16 @@ def main(stdscr):
         #Dependiendo de la tecla, actualizamos las nuevas coordenadas
         if tecla in [ord('w'), ord('W')] or tecla == curses.KEY_UP:   
             nueva_y = nueva_y - 1
-            direccion = "arriba"
+            jugador.direccion = "arriba"
         elif tecla in [ord('s'), ord('S')] or tecla == curses.KEY_DOWN:
             nueva_y = nueva_y + 1
-            direccion = "abajo"
+            jugador.direccion = "abajo"
         elif tecla in [ord('a'), ord('A')] or tecla == curses.KEY_LEFT:
             nueva_x = nueva_x - 1
-            direccion = "izquierda"
+            jugador.direccion = "izquierda"
         elif tecla in [ord('d'), ord('D')] or tecla == curses.KEY_RIGHT:
             nueva_x = nueva_x + 1
-            direccion = "derecha"
+            jugador.direccion = "derecha"
 
         if jugador.puede_mover(mapa, nueva_x, nueva_y):
             #Actualizamos las coordenadas del jugador con las nuevas
