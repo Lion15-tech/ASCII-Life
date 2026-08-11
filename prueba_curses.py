@@ -1,19 +1,48 @@
 import curses
 
+def dibujar_interfaz(stdscr):
+    stdscr.clear()
+    stdscr.addstr(0, 0, "┌─────────mapa──────────┐")
+    stdscr.addstr(1, 0, "│                       │")
+    stdscr.addstr(2, 0, "│                       │")
+    stdscr.addstr(3, 0, "│                       │")
+    stdscr.addstr(4, 0, "│                       │")
+    stdscr.addstr(5, 0, "│                       │")
+    stdscr.addstr(6, 0, "│                       │")
+    stdscr.addstr(7, 0, "└───────────────────────┘")
+
+    stdscr.addstr(0, 24, "┌──────inventario──────┐")
+    stdscr.addstr(1, 24, "│                      │")
+    stdscr.addstr(2, 24, "│                      │")
+    stdscr.addstr(3, 24, "│                      │")
+    stdscr.addstr(4, 24, "│                      │")
+    stdscr.addstr(5, 24, "│                      │")
+    stdscr.addstr(6, 24, "│                      │")
+    stdscr.addstr(7, 24, "└──────────────────────┘")
+
+    stdscr.addstr(8, 0, "┌──────────────────────────────────────────────┐")
+    stdscr.addstr(9, 0, "│                                              │")
+    stdscr.addstr(10, 0, "└──────────────────────────────────────────────┘")
+
+
+
+
+
 def main(stdscr):
 
     #coordenadas iniciales del jugador
-    jugador_x = 10
-    jugador_y = 5
+    jugador_x = 3
+    jugador_y = 2
 
     #Iniciamos al jugador
     stdscr.clear()
     stdscr.refresh()
+    dibujar_interfaz(stdscr)
     stdscr.addstr(jugador_y, jugador_x, "@")
     stdscr.refresh()
 
     #Voy a comentar el código para ahorita que voy aprendiendo no perderme tanto
-    while True:
+    while True:        
         #Pedimos la tecla
         tecla = stdscr.getch()
 
