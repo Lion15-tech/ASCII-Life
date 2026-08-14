@@ -39,3 +39,14 @@
   
 ## v0.0.7
 - pequeña corrección en la dirección del jugador al moverse
+- Se creó el sistema de inventario.
+- Se implementó `agregar_item()`.
+- Se implementó `quitar_item()`.
+- Se implementó `obtener_cantidad()`.
+- Se añadió protección para evitar cantidades negativas.
+- El inventario ahora se muestra dinámicamente.
+- Los objetos con cantidad 0 no se muestran.
+- Los objetos pueden contener múltiples tipos de objetos.
+- Los cofres pueden entregar contenido al jugador.
+- Los cofres recuerdan si ya fueron abiertos.
+- Se hizo más genérica la función de interacción con objetos.

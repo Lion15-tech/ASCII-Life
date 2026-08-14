@@ -1,4 +1,5 @@
 import objetos
+import inventario
 
 def dibujar_interfaz(stdscr):
     stdscr.clear()
@@ -42,5 +43,9 @@ def dibujar_mapa(stdscr, mapa, jugador_x, jugador_y):
 
 
 def dibujar_inventario(stdscr, inventario):
-    stdscr.addstr(1, 26, f"Manzanas: {inventario['manzanas']}")
-    stdscr.addstr(2, 26, f"Agua: {inventario['agua']}")
+    fila = 1
+    for nombre, cantidad in inventario.items():
+        if cantidad > 0:
+            stdscr.addstr(fila, 26, f"{nombre}: {cantidad}")
+            fila += 1
+        

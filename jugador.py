@@ -15,10 +15,17 @@ def obtener_casilla_enfrente(jugador_x, jugador_y, direccion):
     elif direccion == "derecha":
         return jugador_x + 1, jugador_y
 
+
 def puede_mover(mapa, nueva_x, nueva_y):
-    casilla = mapa[nueva_y][nueva_x]
-
-    if casilla == ".":
-        return True
-
+    #VALIDACIÓN VERTICAL (Filas)
+    #len(mapa) nos da el número de filas porque cada fila es una lista dentro de la lista principal
+    if nueva_y >= 0 and nueva_y < len(mapa):
+        #VALIDACIÓN HORIZONTAL (Columnas)
+        #len(mapa[nueva_y]) nos da el número de columnas de la fila específica (nueva_y)
+        if nueva_x >= 0 and nueva_x < len(mapa[0]):
+            # Como los dos 'if' anteriores confirmaron que la coordenada es 100% segura continuamos
+            casilla = mapa[nueva_y][nueva_x]
+            if casilla == ".":
+                return True
+    # Si el código llega a esta línea, significa que alguna de las condiciones de arriba falló
     return False

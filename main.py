@@ -2,6 +2,7 @@ import curses
 import interfaz
 import objetos 
 import jugador
+import inventario
 
 #Definimos el mapa como una lista de listas 
 mapa = [
@@ -13,16 +14,11 @@ mapa = [
     ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#"]  # 4
 ]
 
-inventario = {
-    "manzanas": 0,
-    "agua": 0
-}
-
 #Main para iniciar el juego con curses
 def main(stdscr):
     while True:
         interfaz.dibujar_interfaz(stdscr)
-        interfaz.dibujar_inventario(stdscr, inventario)
+        interfaz.dibujar_inventario(stdscr, inventario.inventario)
         interfaz.dibujar_mapa(stdscr, mapa, jugador.jugador_x, jugador.jugador_y)
 
         #Iniciamos las nuevas coordenadas del jugador poniendo las mismas que las iniciales
